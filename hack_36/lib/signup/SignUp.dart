@@ -316,19 +316,13 @@ class SignUpScreenState extends State<SignUpScreen> {
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
                     colors: [
-                      Color(0xffBB8686),
-                      Color(0xffEDB7B7),
-                      Color(0xffFBC0C0),
-                      Color(0xffFCEBEB),
+                      Color(0xFFFFCEE6),
+                      Color(0xFFFCBCD7),
+                      Color(0xFFF9A3CB),
+                      Color(0xFFEF87BE),
+                      Color(0xFFE56AB3),
                     ],
-                    stops: [0.1, 0.3, 0.7, 0.9],
-                    //   Color(0xFFFFCEE6),
-                    //   Color(0xFFFCBCD7),
-                    //   Color(0xFFF9A3CB),
-                    //   Color(0xFFEF87BE),
-                    //   Color(0xFFE56AB3),
-                    // ],
-                    // stops: [0.1, 0.3, 0.6, 0.8, 1.0],
+                    stops: [0.1, 0.3, 0.6, 0.8,1.0],
                   ),
                 ),
               ),
@@ -358,7 +352,7 @@ class SignUpScreenState extends State<SignUpScreen> {
                       SizedBox(
                         height: 10.0,
                       ),
-                      //buildUsername(),
+                     //buildUsername(),
                       SizedBox(
                         height: 10.0,
                       ),
@@ -384,8 +378,7 @@ class SignUpScreenState extends State<SignUpScreen> {
 
   void signUp() async {
     //This function Signs the user up with firebase and handles any errors
-    if (_name != null) {
-      //&& _username != null) {
+    if (_name != null ){//&& _username != null) {
       //The try block is called only if name and username are filled
       try {
         _firestore.collection('people').add({
@@ -403,12 +396,8 @@ class SignUpScreenState extends State<SignUpScreen> {
         _fire.Reload();
         User curr = auth.currentUser; //await _fire.Current();
 
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => MyHomePage(title: "hey", curr: curr),
-          ),
-        ); //HomeScreen(curr: curr)));
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => MyHomePage(title: "hey", curr:curr),),);//HomeScreen(curr: curr)));
       } catch (e) {
         //Handles any errors in the email and password and prints them as toasts
         String s = e.message;
@@ -430,7 +419,7 @@ class SignUpScreenState extends State<SignUpScreen> {
     } else {
       //Comes to else if The name or username is empty
       Fluttertoast.showToast(
-          //Prints error toast
+        //Prints error toast
           msg: "Display name can not be empty.",
           toastLength: Toast.LENGTH_LONG,
           gravity: ToastGravity.BOTTOM,

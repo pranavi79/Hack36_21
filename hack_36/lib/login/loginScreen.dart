@@ -7,7 +7,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'utilities.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 Person u = Person();
 String _email = u.email;
@@ -36,7 +35,7 @@ class LoginScreenState extends State<LoginScreen> {
           child: TextField(
             keyboardType: TextInputType.emailAddress,
             style: TextStyle(
-              color: Colors.black45,
+              color: Colors.black,
               fontFamily: 'OpenSans',
             ),
             decoration: InputDecoration(
@@ -74,7 +73,7 @@ class LoginScreenState extends State<LoginScreen> {
           child: TextField(
             obscureText: true,
             style: TextStyle(
-              color: Colors.black38,
+              color: Colors.black,
               fontFamily: 'OpenSans',
             ),
             decoration: InputDecoration(
@@ -121,22 +120,15 @@ class LoginScreenState extends State<LoginScreen> {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30.0),
         ),
-        color: Colors.pink[300],
+        color: Colors.white,
         child: Text(
           'LOGIN',
           style: TextStyle(
-            color: Colors.white, //blueGrey[500],
+            color: Colors.pink[300],
             letterSpacing: 1.5,
             fontSize: 18.0,
             fontWeight: FontWeight.bold,
             fontFamily: 'OpenSans',
-            shadows: <Shadow>[
-              Shadow(
-                offset: Offset(2.0, 2.0),
-                blurRadius: 3.0,
-                color: Colors.black45,
-              )
-            ],
           ),
         ),
       ),
@@ -158,7 +150,7 @@ class LoginScreenState extends State<LoginScreen> {
             TextSpan(
               text: 'Don\'t have an Account? ',
               style: TextStyle(
-                color: Colors.black38,
+                color: Colors.white,
                 fontSize: 18.0,
                 fontWeight: FontWeight.w400,
               ),
@@ -166,18 +158,9 @@ class LoginScreenState extends State<LoginScreen> {
             TextSpan(
               text: 'Sign Up',
               style: TextStyle(
-                color: Colors.black45,
-                shadows: <Shadow>[
-                  Shadow(
-                    offset: Offset(1.0, 1.0),
-                    blurRadius: 3.0,
-                    color: Colors.black45,
-                  )
-                ],
-                letterSpacing: 1.5,
+                color: Colors.white,
                 fontSize: 18.0,
                 fontWeight: FontWeight.bold,
-                fontFamily: 'OpenSans',
               ),
             ),
           ],
@@ -203,19 +186,13 @@ class LoginScreenState extends State<LoginScreen> {
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
                     colors: [
-                      Color(0xffBB8686),
-                      Color(0xffEDB7B7),
-                      Color(0xffFBC0C0),
-                      Color(0xffFCEBEB),
+                      Color(0xFFFFCEE6),
+                      Color(0xFFFCBCD7),
+                      Color(0xFFF9A3CB),
+                      Color(0xFFEF87BE),
+                      Color(0xFFE56AB3),
                     ],
-                    stops: [0.1, 0.3, 0.7, 0.9],
-                    //   Color(0xFFFFCEE6),
-                    //   Color(0xFFFCBCD7),
-                    //   Color(0xFFF9A3CB),
-                    //   Color(0xFFEF87BE),
-                    //   Color(0xFFE56AB3),
-                    // ],
-                    // stops: [0.1, 0.3, 0.6, 0.8, 1.0],
+                    stops: [0.1, 0.3, 0.6, 0.8, 1.0],
                   ),
                 ),
               ),
@@ -232,18 +209,11 @@ class LoginScreenState extends State<LoginScreen> {
                     children: <Widget>[
                       Text(
                         'Sign In',
-                        style: GoogleFonts.raleway(
-                          textStyle: TextStyle(
-                              color: Colors.blueGrey[700],
-                              fontSize: 40.0,
-                              fontWeight: FontWeight.bold,
-                              shadows: <Shadow>[
-                                Shadow(
-                                  offset: Offset(3.0, 3.0),
-                                  blurRadius: 3.0,
-                                  color: Colors.black38,
-                                ),
-                              ]),
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: 'OpenSans',
+                          fontSize: 30.0,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                       SizedBox(height: 30.0),
@@ -268,8 +238,10 @@ class LoginScreenState extends State<LoginScreen> {
 
   void signIn() async {
     // This function logs the user in with firebase and handles any errors
+
     try {
       //Tries to log the user in
+
       SharedPreferences myPrefs = await SharedPreferences.getInstance();
       myPrefs.setString('email', _email);
       myPrefs.setString('password', _password);
