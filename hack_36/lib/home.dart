@@ -4,6 +4,7 @@ import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'fireauth.dart';
+import 'package:hack_36/Profile.dart';
 
 class MyHomePage extends StatefulWidget {
   final User curr;
@@ -81,6 +82,22 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Container(
               color: Colors.blue[50],
+            ),
+            RaisedButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Profile(curr: curr),
+                    ));
+              },
+              child: Text(
+                'Profile',
+                style: TextStyle(
+                  color: Color(0xFFEF87BE),
+                ),
+              ),
+              color: Colors.white,
             ),
           ],
         ),

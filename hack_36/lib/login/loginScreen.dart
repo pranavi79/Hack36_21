@@ -209,6 +209,13 @@ class LoginScreenState extends State<LoginScreen> {
                       Color(0xffFCEBEB),
                     ],
                     stops: [0.1, 0.3, 0.7, 0.9],
+                    //   Color(0xFFFFCEE6),
+                    //   Color(0xFFFCBCD7),
+                    //   Color(0xFFF9A3CB),
+                    //   Color(0xFFEF87BE),
+                    //   Color(0xFFE56AB3),
+                    // ],
+                    // stops: [0.1, 0.3, 0.6, 0.8, 1.0],
                   ),
                 ),
               ),
@@ -270,6 +277,7 @@ class LoginScreenState extends State<LoginScreen> {
       final String password = myPrefs.getString('password');
       await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: email, password: password);
+
       User curr = auth.currentUser;
       print("Going home now");
       Navigator.push(

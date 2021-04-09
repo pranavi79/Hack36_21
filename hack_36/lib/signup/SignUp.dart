@@ -322,6 +322,13 @@ class SignUpScreenState extends State<SignUpScreen> {
                       Color(0xffFCEBEB),
                     ],
                     stops: [0.1, 0.3, 0.7, 0.9],
+                    //   Color(0xFFFFCEE6),
+                    //   Color(0xFFFCBCD7),
+                    //   Color(0xFFF9A3CB),
+                    //   Color(0xFFEF87BE),
+                    //   Color(0xFFE56AB3),
+                    // ],
+                    // stops: [0.1, 0.3, 0.6, 0.8, 1.0],
                   ),
                 ),
               ),
@@ -351,15 +358,15 @@ class SignUpScreenState extends State<SignUpScreen> {
                       SizedBox(
                         height: 10.0,
                       ),
-                      buildUsername(),
+                      //buildUsername(),
                       SizedBox(
                         height: 10.0,
                       ),
-                      buildLocation(),
+                      //buildLocation(),
                       SizedBox(
                         height: 10.0,
                       ),
-                      buildPhone(),
+                      //buildPhone(),
                       SizedBox(
                         height: 10,
                       ),
@@ -377,7 +384,8 @@ class SignUpScreenState extends State<SignUpScreen> {
 
   void signUp() async {
     //This function Signs the user up with firebase and handles any errors
-    if (_name != null && _username != null) {
+    if (_name != null) {
+      //&& _username != null) {
       //The try block is called only if name and username are filled
       try {
         _firestore.collection('people').add({
@@ -398,7 +406,7 @@ class SignUpScreenState extends State<SignUpScreen> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => MyHomePage(title: "hey"),
+            builder: (context) => MyHomePage(title: "hey", curr: curr),
           ),
         ); //HomeScreen(curr: curr)));
       } catch (e) {
@@ -423,7 +431,7 @@ class SignUpScreenState extends State<SignUpScreen> {
       //Comes to else if The name or username is empty
       Fluttertoast.showToast(
           //Prints error toast
-          msg: "Display name and username can not be empty.",
+          msg: "Display name can not be empty.",
           toastLength: Toast.LENGTH_LONG,
           gravity: ToastGravity.BOTTOM,
           timeInSecForIosWeb: 3,
