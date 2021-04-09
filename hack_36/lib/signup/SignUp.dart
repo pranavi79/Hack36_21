@@ -351,15 +351,15 @@ class SignUpScreenState extends State<SignUpScreen> {
                       SizedBox(
                         height: 10.0,
                       ),
-                      buildUsername(),
+                     //buildUsername(),
                       SizedBox(
                         height: 10.0,
                       ),
-                      buildLocation(),
+                      //buildLocation(),
                       SizedBox(
                         height: 10.0,
                       ),
-                      buildPhone(),
+                      //buildPhone(),
                       SizedBox(
                         height: 10,
                       ),
@@ -377,7 +377,7 @@ class SignUpScreenState extends State<SignUpScreen> {
 
   void signUp() async {
     //This function Signs the user up with firebase and handles any errors
-    if (_name != null && _username != null) {
+    if (_name != null ){//&& _username != null) {
       //The try block is called only if name and username are filled
       try {
         _firestore.collection('people').add({
@@ -396,7 +396,7 @@ class SignUpScreenState extends State<SignUpScreen> {
         User curr = auth.currentUser; //await _fire.Current();
 
         Navigator.push(context,
-            MaterialPageRoute(builder: (context) => MyHomePage(title: "hey"),),);//HomeScreen(curr: curr)));
+            MaterialPageRoute(builder: (context) => MyHomePage(title: "hey", curr:curr),),);//HomeScreen(curr: curr)));
       } catch (e) {
         //Handles any errors in the email and password and prints them as toasts
         String s = e.message;
@@ -419,7 +419,7 @@ class SignUpScreenState extends State<SignUpScreen> {
       //Comes to else if The name or username is empty
       Fluttertoast.showToast(
         //Prints error toast
-          msg: "Display name and username can not be empty.",
+          msg: "Display name can not be empty.",
           toastLength: Toast.LENGTH_LONG,
           gravity: ToastGravity.BOTTOM,
           timeInSecForIosWeb: 3,

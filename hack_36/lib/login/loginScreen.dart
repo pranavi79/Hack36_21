@@ -19,6 +19,7 @@ class LoginScreen extends StatefulWidget {
   LoginScreenState createState() => LoginScreenState();
 }
 class LoginScreenState extends State<LoginScreen> {
+  FirebaseAuth auth = FirebaseAuth.instance;
   Widget buildEmailTF() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -247,9 +248,11 @@ class LoginScreenState extends State<LoginScreen> {
       final String password = myPrefs.getString('password');
       await FirebaseAuth.instance.signInWithEmailAndPassword(
           email: email, password: password);
+
+      User curr = auth.currentUser;
       print("Going home now");
       Navigator.push(context,
-        MaterialPageRoute(builder: (context) => MyHomePage(title: "hey"),),);//HomeScreen(curr: null,),),);
+        MaterialPageRoute(builder: (context) => MyHomePage(title: "hey", curr: curr),),);//HomeScreen(curr: null,),),);
     }
 
     catch (e) {                                   //Handles any errors and prints them as toasts
