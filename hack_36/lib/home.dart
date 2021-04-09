@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  final User curr;
+  MyHomePage({Key key, this.title, this.curr}) : super(key: key);
 
   final String title;
 
@@ -9,8 +11,16 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  User curr;
+  String username;
+
   @override
+  void initState() {
+    curr = widget.curr;
+    super.initState();
+  }
   Widget build(BuildContext context) {
+    username= curr?.displayName;
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
@@ -20,7 +30,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'You have pushed the button this many times:',
+              'You have pushed the button this many times, $username :',
             ),
           ],
         ),

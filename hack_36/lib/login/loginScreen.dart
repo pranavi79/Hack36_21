@@ -247,6 +247,7 @@ class LoginScreenState extends State<LoginScreen> {
       final String password = myPrefs.getString('password');
       await FirebaseAuth.instance.signInWithEmailAndPassword(
           email: email, password: password);
+      print("Going home now");
       Navigator.push(context,
         MaterialPageRoute(builder: (context) => MyHomePage(title: "hey"),),);//HomeScreen(curr: null,),),);
     }

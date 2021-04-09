@@ -87,7 +87,7 @@ class _SplashPageState extends State<SplashPage> {
       case LoginStatus.LoggedIn:
         {
          // return LoginScreen();
-          return MyHomePage(title: "Our app");
+          return MyHomePage(title: "Our app",curr: curr);
           //return HomeScreen(curr: null,);
         }
       case LoginStatus.NotLoggedIn:
