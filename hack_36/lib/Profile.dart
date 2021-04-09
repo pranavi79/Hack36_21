@@ -1,13 +1,13 @@
 import 'package:hack_36/fireauth.dart';
-import 'package:hack_36/home.dart';
+//import 'package:hack_36/home.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_phoenix/flutter_phoenix.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+//import 'package:cloud_firestore/cloud_firestore.dart';
 //import 'edit_profile.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-final _firestore = FirebaseFirestore.instance;
+//final _firestore = FirebaseFirestore.instance;
 
 class Profile extends StatefulWidget {
   final User curr;
@@ -78,7 +78,7 @@ class _ProfileState extends State<Profile> {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xFF5CE1E6),
+        backgroundColor: Color(0xFFEF87BE),
         brightness: Brightness.dark,
         title: Text(
           "My Profile",
@@ -117,7 +117,7 @@ class _ProfileState extends State<Profile> {
             child: Container(
               decoration: BoxDecoration(
                 color:
-                Color(0xffccffff), //Color(0xff00ccff),//Color(0xFF5CE1E6),
+                Color(0xFFFFCEE6), //Color(0xff00ccff),//Color(0xFF5CE1E6),
               ),
               height: double.infinity,
               width: double.infinity,
@@ -130,7 +130,7 @@ class _ProfileState extends State<Profile> {
                       height: 40,
                     ),
                     CircleAvatar(
-                      backgroundColor: Color(0xFF5CE1E6), //Color(0xff00ccff),
+                      backgroundColor: Color(0xFFF9A3CB), //Color(0xff00ccff),
                       maxRadius: 50,
                       child: Text(
                         '$initial',
@@ -153,7 +153,7 @@ class _ProfileState extends State<Profile> {
                         style: GoogleFonts.raleway(
                             fontSize: 25.0,
                             fontWeight: FontWeight.bold,
-                            color: Colors.black,
+                            color: Colors.white,
                             textStyle: TextStyle(shadows: <Shadow>[
                               Shadow(
                                 offset: Offset(3.0, 3.0),
@@ -168,10 +168,18 @@ class _ProfileState extends State<Profile> {
                     ),
                     Text(
                       mail,
-                      style: TextStyle(
+                      style:  GoogleFonts.raleway(
                         fontSize: 20,
+                        color: Colors.white,
+                          textStyle: TextStyle(shadows: <Shadow>[
+                            Shadow(
+                              offset: Offset(3.0, 3.0),
+                              blurRadius: 3.0,
+                              color: Colors.black38,
+                            ),
+                          ])),
                       ),
-                    ),
+
                     // StreamBuilder<QuerySnapshot>(
                     //     stream: _firestore
                     //         .collection('people')
@@ -220,7 +228,7 @@ class _ProfileState extends State<Profile> {
         ]),
       ),
       floatingActionButton: FloatingActionButton.extended(
-        backgroundColor: Color(0xFF5CE1E6),
+        backgroundColor: Color(0xFFE56AB3),
         onPressed: () {
           _fire.out();
           Phoenix.rebirth(context);
@@ -241,16 +249,16 @@ class _ProfileState extends State<Profile> {
       ),
       bottomNavigationBar: SafeArea(
         child: BottomAppBar(
-          color: Color(0xFF5CE1E6),
+          color: Color(0xFFEF87BE),
           child: Row(
             children: [
               IconButton(
                 icon: Icon(
                   Icons.menu,
-                  color: Color(0xFF5CE1E6),
+                  color: Color(0xFFEF87BE),
                 ),
                 onPressed: () {},
-                color: Color(0xff66ccff), //Colors.blue,
+                color:Color(0xFFE56AB3), //Colors.blue,
               ),
             ],
           ),

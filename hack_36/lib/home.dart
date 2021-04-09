@@ -25,6 +25,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
+        backgroundColor:  Color(0xFFEF87BE),
       ),
       body: Center(
 
@@ -44,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text(
                 'Profile',
                 style: TextStyle(
-                    color: Colors.blueAccent
+                  color: Color(0xFFEF87BE),
                 ),
               ),
               style: ButtonStyle(

@@ -36,7 +36,7 @@ class LoginScreenState extends State<LoginScreen> {
           child: TextField(
             keyboardType: TextInputType.emailAddress,
             style: TextStyle(
-              color: Colors.white,
+              color: Colors.black,
               fontFamily: 'OpenSans',
             ),
             decoration: InputDecoration(
@@ -44,7 +44,7 @@ class LoginScreenState extends State<LoginScreen> {
               contentPadding: EdgeInsets.only(top: 14.0),
               prefixIcon: Icon(
                 Icons.email,
-                color: Colors.white,
+                color: Colors.pink[300],
               ),
               hintText: 'Enter your Email',
               hintStyle: kHintTextStyle,
@@ -74,7 +74,7 @@ class LoginScreenState extends State<LoginScreen> {
           child: TextField(
             obscureText: true,
             style: TextStyle(
-              color: Colors.white,
+              color: Colors.black,
               fontFamily: 'OpenSans',
             ),
             decoration: InputDecoration(
@@ -82,7 +82,7 @@ class LoginScreenState extends State<LoginScreen> {
               contentPadding: EdgeInsets.only(top: 14.0),
               prefixIcon: Icon(
                 Icons.lock,
-                color: Colors.white,
+                color: Colors.pink[300],
               ),
               hintText: 'Enter your Password',
               hintStyle: kHintTextStyle,
@@ -125,7 +125,7 @@ class LoginScreenState extends State<LoginScreen> {
         child: Text(
           'LOGIN',
           style: TextStyle(
-            color: Color(0xFF527DAA),
+            color:Colors.pink[300],
             letterSpacing: 1.5,
             fontSize: 18.0,
             fontWeight: FontWeight.bold,
@@ -187,12 +187,13 @@ class LoginScreenState extends State<LoginScreen> {
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
                     colors: [
-                      Color(0xFF73AEF5),
-                      Color(0xFF61A4F1),
-                      Color(0xFF478DE0),
-                      Color(0xFF398AE5),
+                      Color(0xFFFFCEE6),
+                      Color(0xFFFCBCD7),
+                      Color(0xFFF9A3CB),
+                      Color(0xFFEF87BE),
+                      Color(0xFFE56AB3),
                     ],
-                    stops: [0.1, 0.4, 0.7, 0.9],
+                    stops: [0.1, 0.3, 0.6, 0.8,1.0],
                   ),
                 ),
               ),
