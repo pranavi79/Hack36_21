@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "103842698852",
+    "project_id": "hack36-2021",
+    "storage_bucket": "hack36-2021.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:103842698852:android:0f35e8c94bcf4b68a03171",
+        "android_client_info": {
+          "package_name": "com.example.hack_36"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "103842698852-08kbqfifk9k6s9p3iqv1fouvnta7dira.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBkaxu5iCDawapIAVBf-iL4mquRL86bxQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "103842698852-08kbqfifk9k6s9p3iqv1fouvnta7dira.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
