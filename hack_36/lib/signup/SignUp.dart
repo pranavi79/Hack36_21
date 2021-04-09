@@ -316,12 +316,12 @@ class SignUpScreenState extends State<SignUpScreen> {
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
                     colors: [
-                      Color(0xffccffff),
-                      Color(0xffd5ffee),
-                      Color(0xffccffff),
-                      Color(0xffcffdff),
+                      Color(0xffBB8686),
+                      Color(0xffEDB7B7),
+                      Color(0xffFBC0C0),
+                      Color(0xffFCEBEB),
                     ],
-                    stops: [0.1, 0.4, 0.7, 0.9],
+                    stops: [0.1, 0.3, 0.7, 0.9],
                   ),
                 ),
               ),
@@ -395,8 +395,12 @@ class SignUpScreenState extends State<SignUpScreen> {
         _fire.Reload();
         User curr = auth.currentUser; //await _fire.Current();
 
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => MyHomePage(title: "hey"),),);//HomeScreen(curr: curr)));
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => MyHomePage(title: "hey"),
+          ),
+        ); //HomeScreen(curr: curr)));
       } catch (e) {
         //Handles any errors in the email and password and prints them as toasts
         String s = e.message;
@@ -418,7 +422,7 @@ class SignUpScreenState extends State<SignUpScreen> {
     } else {
       //Comes to else if The name or username is empty
       Fluttertoast.showToast(
-        //Prints error toast
+          //Prints error toast
           msg: "Display name and username can not be empty.",
           toastLength: Toast.LENGTH_LONG,
           gravity: ToastGravity.BOTTOM,
