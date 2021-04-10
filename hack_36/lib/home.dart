@@ -4,8 +4,11 @@ import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:hack_36/groupChat/home_screen.dart';
+import 'package:hack_36/videoCall/channels.dart';
 import 'fireauth.dart';
 import 'package:hack_36/Profile.dart';
+import 'package:hack_36/video/PreRecordVideo.dart';
+import 'package:hack_36/video/videoList.dart';
 
 class MyHomePage extends StatefulWidget {
   final User curr;
@@ -50,13 +53,13 @@ class _MyHomePageState extends State<MyHomePage> {
           height: 30,
           width: 30,
         ),
-        title: Text("Hack36",
-            style: GoogleFonts.roboto(fontWeight: FontWeight.bold)),
+        title: Text("S.H.I.E.L.D",
+            style: GoogleFonts.oswald(fontWeight: FontWeight.bold)),
         actions: <Widget>[
           IconButton(
             icon: Icon(
               Icons.exit_to_app,
-              color: Colors.black45,
+              color: Colors.blueGrey[800],
             ),
             onPressed: () {
               _fire.out();
@@ -72,36 +75,19 @@ class _MyHomePageState extends State<MyHomePage> {
             setState(() => _currentIndex = index);
           },
           children: <Widget>[
-
             //
             Profile(curr: curr),
+            //VideoPlayerScreen(),
+            VideoListScreen(),
 
-            Container(
-              color: Colors.black54,
-            ),
+            // Container(
+            //   color: Colors.black54,
+            // ),
             // Container(
             //   color: Colors.yellow[50],
             // ),
             HomeScreen2(),
-            Container(
-              color: Colors.blue[50],
-            ),
-            RaisedButton(
-              onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Profile(curr: curr),
-                    ));
-              },
-              child: Text(
-                'Profile',
-                style: TextStyle(
-                  color: Color(0xFFEF87BE),
-                ),
-              ),
-              color: Colors.white,
-            ),
+            MyChannel(),
           ],
         ),
       ),
@@ -117,23 +103,22 @@ class _MyHomePageState extends State<MyHomePage> {
           BottomNavyBarItem(
               title: Text('Profile'),
               icon: Icon(Icons.person),
-              inactiveColor: Colors.black45,
+              inactiveColor: Colors.blueGrey[800],
               activeColor: Colors.white),
           BottomNavyBarItem(
               title: Text('Videos'),
               icon: Icon(Icons.video_library),
-              inactiveColor: Colors.black45,
+              inactiveColor: Colors.blueGrey[800],
               activeColor: Colors.white),
           BottomNavyBarItem(
               title: Text('Chat'),
               icon: Icon(Icons.chat_bubble_outline),
-
-              inactiveColor: Colors.black45,
+              inactiveColor: Colors.blueGrey[800],
               activeColor: Colors.white),
           BottomNavyBarItem(
               title: Text('Videocall'),
               icon: Icon(Icons.video_call),
-              inactiveColor: Colors.black45,
+              inactiveColor: Colors.blueGrey[800],
               activeColor: Colors.white),
         ],
       ),

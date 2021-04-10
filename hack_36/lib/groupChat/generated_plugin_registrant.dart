@@ -9,5 +9,5 @@ void registerPlugins(Registrar registrar) {
   FirebaseFirestoreWeb.registerWith(registrar);
   FirebaseAuthWeb.registerWith(registrar);
   FirebaseCoreWeb.registerWith(registrar);
-  registrar.registerMessageHandler();
+  //registrar.registerMessageHandler();
 }

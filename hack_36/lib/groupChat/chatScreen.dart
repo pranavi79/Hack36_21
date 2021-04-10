@@ -7,14 +7,16 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 final _firestore = FirebaseFirestore.instance;
 ScrollController scrollController = ScrollController();
+
 class ChatScreen extends StatefulWidget {
   final String pp;
   final List<String> groupMembers;
-  ChatScreen({this.pp,this.groupMembers});
+  ChatScreen({this.pp, this.groupMembers});
 
   @override
   _ChatScreenState createState() => _ChatScreenState();
 }
+
 class _ChatScreenState extends State<ChatScreen> {
   final messageTextController = TextEditingController();
   final _auth = FirebaseAuth.instance;
@@ -45,7 +47,7 @@ class _ChatScreenState extends State<ChatScreen> {
       child: Row(
         children: <Widget>[
           IconButton(
-              icon: Icon(Icons.location_city_outlined),
+              icon: Icon(Icons.location_city),
               iconSize: 25,
               color: Colors.yellow[700],
               onPressed: () {
@@ -118,18 +120,15 @@ class _ChatScreenState extends State<ChatScreen> {
                     ),
                   ),
                 ),
-                child: Icon(
-                    Icons.more_vert
-                ),
-              )
-          ),
+                child: Icon(Icons.more_vert),
+              )),
         ],
       ),
       body: Column(
         children: <Widget>[
           MessagesStream(
             LInUser: LInUser,
-            pp:widget.pp,
+            pp: widget.pp,
           ),
           sendMessageArea(),
         ],
@@ -141,7 +140,7 @@ class _ChatScreenState extends State<ChatScreen> {
 class MessagesStream extends StatelessWidget {
   final User LInUser;
   final String pp;
-  MessagesStream({this.LInUser,this.pp});
+  MessagesStream({this.LInUser, this.pp});
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<QuerySnapshot>(
@@ -198,7 +197,7 @@ class MessageBubble extends StatelessWidget {
       padding: EdgeInsets.all(10.0),
       child: Column(
         crossAxisAlignment:
-        isMe ? CrossAxisAlignment.end : CrossAxisAlignment.start,
+            isMe ? CrossAxisAlignment.end : CrossAxisAlignment.start,
         children: <Widget>[
           Text(
             sender,
@@ -210,14 +209,14 @@ class MessageBubble extends StatelessWidget {
           Material(
             borderRadius: isMe
                 ? BorderRadius.only(
-                topLeft: Radius.circular(30.0),
-                bottomLeft: Radius.circular(30.0),
-                bottomRight: Radius.circular(30.0))
+                    topLeft: Radius.circular(30.0),
+                    bottomLeft: Radius.circular(30.0),
+                    bottomRight: Radius.circular(30.0))
                 : BorderRadius.only(
-              bottomLeft: Radius.circular(30.0),
-              bottomRight: Radius.circular(30.0),
-              topRight: Radius.circular(30.0),
-            ),
+                    bottomLeft: Radius.circular(30.0),
+                    bottomRight: Radius.circular(30.0),
+                    topRight: Radius.circular(30.0),
+                  ),
             elevation: 0.5,
             color: isMe ? Colors.blue : Colors.white,
             child: Padding(

@@ -7,6 +7,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'utilities.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 Person u = Person();
 String _email = u.email;
@@ -209,11 +210,20 @@ class LoginScreenState extends State<LoginScreen> {
                     children: <Widget>[
                       Text(
                         'Sign In',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontFamily: 'OpenSans',
-                          fontSize: 30.0,
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.montserrat(
+                          fontSize: 40,
                           fontWeight: FontWeight.bold,
+                          textStyle: TextStyle(
+                            color: Colors.black54,
+                            shadows: <Shadow>[
+                              Shadow(
+                                offset: Offset(2.0, 2.0),
+                                blurRadius: 3.0,
+                                color: Colors.black45,
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                       SizedBox(height: 30.0),

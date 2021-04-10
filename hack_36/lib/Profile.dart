@@ -77,48 +77,49 @@ class _ProfileState extends State<Profile> {
     initial = username.substring(0, 1);
 
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color(0xFFEF87BE),
-        brightness: Brightness.dark,
-        title: Text(
-          "My Profile",
-          style: GoogleFonts.montserrat(
-            fontSize: 25,
-            textStyle: TextStyle(
-              color: Colors.grey[100],
-              shadows: <Shadow>[
-                Shadow(
-                  offset: Offset(3.0, 3.0),
-                  blurRadius: 3.0,
-                  color: Colors.black45,
-                ),
-                //
-              ],
-            ),
-          ),
-        ),
-        actions: <Widget>[
-          // IconButton(
-          //   icon: Icon(Icons.edit),
-          //   onPressed: () {
-          //     Navigator.push(
-          //         context,
-          //         MaterialPageRoute(
-          //           builder: (context) => EditProfile(),
-          //         ));
-          //   },
-          // )
-        ],
-      ),
+      backgroundColor: Colors.blueGrey,
+      // appBar: AppBar(
+      //   backgroundColor: Color(0xFFEF87BE),
+      //   brightness: Brightness.dark,
+      //   title: Text(
+      //     "My Profile",
+      //     style: GoogleFonts.montserrat(
+      //       fontSize: 25,
+      //       textStyle: TextStyle(
+      //         color: Colors.grey[100],
+      //         shadows: <Shadow>[
+      //           Shadow(
+      //             offset: Offset(3.0, 3.0),
+      //             blurRadius: 3.0,
+      //             color: Colors.black45,
+      //           ),
+      //           //
+      //         ],
+      //       ),
+      //     ),
+      //   ),
+      //   actions: <Widget>[
+      //     // IconButton(
+      //     //   icon: Icon(Icons.edit),
+      //     //   onPressed: () {
+      //     //     Navigator.push(
+      //     //         context,
+      //     //         MaterialPageRoute(
+      //     //           builder: (context) => EditProfile(),
+      //     //         ));
+      //     //   },
+      //     // )
+      //   ],
+      // ),
       body: Container(
         child: Column(children: <Widget>[
           Expanded(
             flex: 1,
             child: Container(
               decoration: BoxDecoration(
-                color:
-                Color(0xFFFFCEE6), //Color(0xff00ccff),//Color(0xFF5CE1E6),
-              ),
+                  color: Colors
+                      .blueGrey //Color(0xFFFFCEE6), //Color(0xff00ccff),//Color(0xFF5CE1E6),
+                  ),
               height: double.infinity,
               width: double.infinity,
               child: SafeArea(
@@ -130,7 +131,8 @@ class _ProfileState extends State<Profile> {
                       height: 40,
                     ),
                     CircleAvatar(
-                      backgroundColor: Color(0xFFF9A3CB), //Color(0xff00ccff),
+                      backgroundColor: Colors
+                          .red[200], //Color(0xFFF9A3CB), //Color(0xff00ccff),
                       maxRadius: 50,
                       child: Text(
                         '$initial',
@@ -168,9 +170,9 @@ class _ProfileState extends State<Profile> {
                     ),
                     Text(
                       mail,
-                      style:  GoogleFonts.raleway(
-                        fontSize: 20,
-                        color: Colors.white,
+                      style: GoogleFonts.raleway(
+                          fontSize: 20,
+                          color: Colors.white,
                           textStyle: TextStyle(shadows: <Shadow>[
                             Shadow(
                               offset: Offset(3.0, 3.0),
@@ -178,7 +180,7 @@ class _ProfileState extends State<Profile> {
                               color: Colors.black38,
                             ),
                           ])),
-                      ),
+                    ),
 
                     // StreamBuilder<QuerySnapshot>(
                     //     stream: _firestore
@@ -200,26 +202,26 @@ class _ProfileState extends State<Profile> {
                     //       }
                     //     }),
                     //details("phone: ","1234"),
-                   // details("location: ","hey there"),
-                   //  StreamBuilder<QuerySnapshot>(
-                   //      stream: _firestore
-                   //          .collection('people')
-                   //          .where('email', isEqualTo: mail)
-                   //          .snapshots(),
-                   //      builder: (context, snapshot) {
-                   //        if (!snapshot.hasData) {
-                   //          return Center(
-                   //            child: CircularProgressIndicator(
-                   //              valueColor:
-                   //              AlwaysStoppedAnimation<Color>(Colors.blue),
-                   //            ),
-                   //          );
-                   //        } else {
-                   //          final t = snapshot.data.docs[0];
-                   //          location = t.data()['location'];
-                   //          return details("Location:", location);
-                   //        }
-                   //      }),
+                    // details("location: ","hey there"),
+                    //  StreamBuilder<QuerySnapshot>(
+                    //      stream: _firestore
+                    //          .collection('people')
+                    //          .where('email', isEqualTo: mail)
+                    //          .snapshots(),
+                    //      builder: (context, snapshot) {
+                    //        if (!snapshot.hasData) {
+                    //          return Center(
+                    //            child: CircularProgressIndicator(
+                    //              valueColor:
+                    //              AlwaysStoppedAnimation<Color>(Colors.blue),
+                    //            ),
+                    //          );
+                    //        } else {
+                    //          final t = snapshot.data.docs[0];
+                    //          location = t.data()['location'];
+                    //          return details("Location:", location);
+                    //        }
+                    //      }),
                   ],
                 ),
               ),
@@ -227,45 +229,45 @@ class _ProfileState extends State<Profile> {
           ),
         ]),
       ),
-      floatingActionButton: FloatingActionButton.extended(
-        backgroundColor: Color(0xFFE56AB3),
-        onPressed: () {
-          _fire.out();
-          Phoenix.rebirth(context);
-        },
-        label: Text(
-          'Sign Out',
-          style: GoogleFonts.montserrat(
-            fontWeight: FontWeight.bold,
-            fontSize: 15,
-            textStyle: TextStyle(
-              color: Colors.grey[100],
-            ),
+      // floatingActionButton: FloatingActionButton.extended(
+      //   backgroundColor: Color(0xFFE56AB3),
+      //   onPressed: () {
+      //     _fire.out();
+      //     Phoenix.rebirth(context);
+      //   },
+      //   label: Text(
+      //     'Sign Out',
+      //     style: GoogleFonts.montserrat(
+      //       fontWeight: FontWeight.bold,
+      //       fontSize: 15,
+      //       textStyle: TextStyle(
+      //         color: Colors.grey[100],
+      //       ),
 
-            //icon: Icon(Icons.thumb_up),
-            //Color(0xff00ccff),//Colors.blueAccent,
-          ),
-        ),
-      ),
-      bottomNavigationBar: SafeArea(
-        child: BottomAppBar(
-          color: Color(0xFFEF87BE),
-          child: Row(
-            children: [
-              IconButton(
-                icon: Icon(
-                  Icons.menu,
-                  color: Color(0xFFEF87BE),
-                ),
-                onPressed: () {},
-                color:Color(0xFFE56AB3), //Colors.blue,
-              ),
-            ],
-          ),
-          //child: bottomAppBarContents,
-        ),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      //       //icon: Icon(Icons.thumb_up),
+      //       //Color(0xff00ccff),//Colors.blueAccent,
+      //     ),
+      //   ),
+      // ),
+      // bottomNavigationBar: SafeArea(
+      //   child: BottomAppBar(
+      //     color: Color(0xFFEF87BE),
+      //     child: Row(
+      //       children: [
+      //         IconButton(
+      //           icon: Icon(
+      //             Icons.menu,
+      //             color: Color(0xFFEF87BE),
+      //           ),
+      //           onPressed: () {},
+      //           color:Color(0xFFE56AB3), //Colors.blue,
+      //         ),
+      //       ],
+      //     ),
+      //     //child: bottomAppBarContents,
+      //   ),
+      // ),
+      //floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }
