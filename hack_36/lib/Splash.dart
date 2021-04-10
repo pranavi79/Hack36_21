@@ -61,7 +61,7 @@ class _SplashPageState extends State<SplashPage> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          buildConfettiWidget(controllerTopCenter, pi / 1),
+                          //buildConfettiWidget(controllerTopCenter, pi / 1),
                           buildConfettiWidget(controllerTopCenter, pi / 4),
 
                           Column(
@@ -150,7 +150,7 @@ class _SplashPageState extends State<SplashPage> {
         maxBlastForce: 20, // set a lower max blast force
         minBlastForce: 8, // set a lower min blast force
         emissionFrequency: 0.3,
-        numberOfParticles: 8, // a lot of particles at once
+        numberOfParticles: 7, // a lot of particles at once
         gravity: 1,
       ),
     );
