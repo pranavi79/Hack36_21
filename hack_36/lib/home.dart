@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_phoenix/flutter_phoenix.dart';
+import 'package:hack_36/groupChat/home_screen.dart';
 import 'fireauth.dart';
 import 'package:hack_36/Profile.dart';
 
@@ -71,15 +72,15 @@ class _MyHomePageState extends State<MyHomePage> {
             setState(() => _currentIndex = index);
           },
           children: <Widget>[
-            Container(
-              color: Colors.blueGrey,
-            ),
+            //
+            Profile(curr: curr),
             Container(
               color: Colors.black54,
             ),
-            Container(
-              color: Colors.yellow[50],
-            ),
+            // Container(
+            //   color: Colors.yellow[50],
+            // ),
+            HomeScreen2(),
             Container(
               color: Colors.blue[50],
             ),
