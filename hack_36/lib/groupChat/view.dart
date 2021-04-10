@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+
 class ViewScreen extends StatelessWidget {
   final String p;
   ViewScreen({this.p});
@@ -26,21 +27,24 @@ class ViewScreen extends StatelessWidget {
         ),
         backgroundColor: Colors.white,
         body: StreamBuilder(
-            stream: FirebaseFirestore.instance.collection('groups').where('group',isEqualTo: p).snapshots(),
+            stream: FirebaseFirestore.instance
+                .collection('groups')
+                .where('group', isEqualTo: p)
+                .snapshots(),
             builder: (context, snapshot) {
               if (!snapshot.hasData) {
                 return Center(
                   child: CircularProgressIndicator(
-                    valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
+                    valueColor: AlwaysStoppedAnimation<Color>(Colors.red[200]),
                   ),
                 );
               } else {
                 final members = snapshot.data.documents[0];
-                List<String> member2=List.from(members['members']);
+                List<String> member2 = List.from(members['members']);
                 return ListView.builder(
-                    itemCount:member2.length,
+                    itemCount: member2.length,
                     itemBuilder: (BuildContext context, int index) {
-                      var member=member2[index];
+                      var member = member2[index];
                       print(index);
                       return Container(
                         padding: EdgeInsets.symmetric(
@@ -63,8 +67,9 @@ class ViewScreen extends StatelessWidget {
                               ),
                               child: CircleAvatar(
                                 radius: 35,
-                                backgroundColor: Colors.blue,
-                                child: Text(member[0]),
+                                backgroundColor: Colors.red[200],
+                                child: Text(member[0],
+                                    style: TextStyle(color: Colors.black)),
                               ),
                             ),
                             Container(
@@ -75,7 +80,8 @@ class ViewScreen extends StatelessWidget {
                               child: Column(
                                 children: <Widget>[
                                   Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
                                     children: <Widget>[
                                       Row(
                                         children: <Widget>[
@@ -99,10 +105,8 @@ class ViewScreen extends StatelessWidget {
                           ],
                         ),
                       );
-                    }
-                );
+                    });
               }
-            })
-    );
+            }));
   }
 }

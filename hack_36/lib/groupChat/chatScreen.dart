@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-
 final _firestore = FirebaseFirestore.instance;
 ScrollController scrollController = ScrollController();
 
@@ -49,12 +48,11 @@ class _ChatScreenState extends State<ChatScreen> {
           IconButton(
               icon: Icon(Icons.location_city),
               iconSize: 25,
-              color: Colors.yellow[700],
+              color: Colors.pink,
               onPressed: () {
                 //NewTransaction().build(context, groupMembers);
                 Navigator.of(context).push(new MaterialPageRoute(
-                    builder: (_) => HyperTrackQuickStart()
-                    ,
+                    builder: (_) => HyperTrackQuickStart(),
                     fullscreenDialog: true));
               }),
           Expanded(
@@ -72,7 +70,7 @@ class _ChatScreenState extends State<ChatScreen> {
           IconButton(
             icon: Icon(Icons.send),
             iconSize: 25,
-            color: Colors.blue,
+            color: Colors.pink,
             onPressed: () {
               messageTextController.clear();
               _firestore.collection(widget.pp).add({
@@ -152,7 +150,7 @@ class MessagesStream extends StatelessWidget {
         if (!snapshot.hasData) {
           return Center(
             child: CircularProgressIndicator(
-              backgroundColor: Colors.blue,
+              backgroundColor: Colors.pink,
             ),
           );
         }
@@ -218,7 +216,7 @@ class MessageBubble extends StatelessWidget {
                     topRight: Radius.circular(30.0),
                   ),
             elevation: 0.5,
-            color: isMe ? Colors.blue : Colors.white,
+            color: isMe ? Colors.red[200] : Colors.white,
             child: Padding(
               padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
               child: Text(
