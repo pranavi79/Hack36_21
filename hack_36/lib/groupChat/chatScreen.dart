@@ -1,8 +1,9 @@
+import '../trackLocation/ui.dart';
 import 'view.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'NewTransact.dart';
+
 
 final _firestore = FirebaseFirestore.instance;
 ScrollController scrollController = ScrollController();
@@ -50,9 +51,8 @@ class _ChatScreenState extends State<ChatScreen> {
               onPressed: () {
                 //NewTransaction().build(context, groupMembers);
                 Navigator.of(context).push(new MaterialPageRoute(
-                    builder: (BuildContext context) {
-                      return new NewTransact(usernames: widget.groupMembers);
-                    },
+                    builder: (_) => HyperTrackQuickStart()
+                    ,
                     fullscreenDialog: true));
               }),
           Expanded(
