@@ -4,6 +4,7 @@ import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:hack_36/groupChat/home_screen.dart';
+import 'package:hack_36/videoCall/channels.dart';
 import 'fireauth.dart';
 import 'package:hack_36/Profile.dart';
 
@@ -72,36 +73,13 @@ class _MyHomePageState extends State<MyHomePage> {
             setState(() => _currentIndex = index);
           },
           children: <Widget>[
-
             //
             Profile(curr: curr),
-
             Container(
               color: Colors.black54,
             ),
-            // Container(
-            //   color: Colors.yellow[50],
-            // ),
             HomeScreen2(),
-            Container(
-              color: Colors.blue[50],
-            ),
-            RaisedButton(
-              onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Profile(curr: curr),
-                    ));
-              },
-              child: Text(
-                'Profile',
-                style: TextStyle(
-                  color: Color(0xFFEF87BE),
-                ),
-              ),
-              color: Colors.white,
-            ),
+            MyChannel(),
           ],
         ),
       ),
@@ -127,7 +105,6 @@ class _MyHomePageState extends State<MyHomePage> {
           BottomNavyBarItem(
               title: Text('Chat'),
               icon: Icon(Icons.chat_bubble_outline),
-
               inactiveColor: Colors.black45,
               activeColor: Colors.white),
           BottomNavyBarItem(
