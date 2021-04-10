@@ -44,7 +44,7 @@ class _ChatScreenState extends State<ChatScreen> {
       child: Row(
         children: <Widget>[
           IconButton(
-              icon: Icon(Icons.monetization_on),
+              icon: Icon(Icons.location_city_outlined),
               iconSize: 25,
               color: Colors.yellow[700],
               onPressed: () {
