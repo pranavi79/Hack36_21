@@ -8,9 +8,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'utilities.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-
-
-Person u = Person() ;
+Person u = Person();
 String _email = u.email;
 String _password = u.pass;
 
@@ -18,6 +16,7 @@ class LoginScreen extends StatefulWidget {
   @override
   LoginScreenState createState() => LoginScreenState();
 }
+
 class LoginScreenState extends State<LoginScreen> {
   FirebaseAuth auth = FirebaseAuth.instance;
   Widget buildEmailTF() {
@@ -125,7 +124,7 @@ class LoginScreenState extends State<LoginScreen> {
         child: Text(
           'LOGIN',
           style: TextStyle(
-            color:Colors.pink[300],
+            color: Colors.pink[300],
             letterSpacing: 1.5,
             fontSize: 18.0,
             fontWeight: FontWeight.bold,
@@ -193,7 +192,7 @@ class LoginScreenState extends State<LoginScreen> {
                       Color(0xFFEF87BE),
                       Color(0xFFE56AB3),
                     ],
-                    stops: [0.1, 0.3, 0.6, 0.8,1.0],
+                    stops: [0.1, 0.3, 0.6, 0.8, 1.0],
                   ),
                 ),
               ),
@@ -237,40 +236,42 @@ class LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  void signIn() async {                               // This function logs the user in with firebase and handles any errors
+  void signIn() async {
+    // This function logs the user in with firebase and handles any errors
 
-
-    try {                                           //Tries to log the user in
+    try {
+      //Tries to log the user in
 
       SharedPreferences myPrefs = await SharedPreferences.getInstance();
       myPrefs.setString('email', _email);
       myPrefs.setString('password', _password);
       final String email = myPrefs.getString('email');
       final String password = myPrefs.getString('password');
-      await FirebaseAuth.instance.signInWithEmailAndPassword(
-          email: email, password: password);
+      await FirebaseAuth.instance
+          .signInWithEmailAndPassword(email: email, password: password);
 
       User curr = auth.currentUser;
       print("Going home now");
-      Navigator.push(context,
-        MaterialPageRoute(builder: (context) => MyHomePage(title: "hey", curr: curr),),);//HomeScreen(curr: null,),),);
-    }
-
-    catch (e) {                                   //Handles any errors and prints them as toasts
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => MyHomePage(title: "hey", curr: curr),
+        ),
+      ); //HomeScreen(curr: null,),),);
+    } catch (e) {
+      //Handles any errors and prints them as toasts
       String s = e.message;
       if (e.message == null) {
         s = "Fill in the required fields.";
       }
       Fluttertoast.showToast(
-
           msg: s,
           toastLength: Toast.LENGTH_LONG,
           gravity: ToastGravity.BOTTOM,
           timeInSecForIosWeb: 2,
           backgroundColor: Colors.red,
           textColor: Colors.white,
-          fontSize: 12.0
-      );
+          fontSize: 12.0);
     }
   }
 }
