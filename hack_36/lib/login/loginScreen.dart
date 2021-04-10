@@ -209,7 +209,7 @@ class LoginScreenState extends State<LoginScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Text(
-                        'Sign Up',
+                        'Sign In',
                         textAlign: TextAlign.center,
                         style: GoogleFonts.montserrat(
                           fontSize: 40,
