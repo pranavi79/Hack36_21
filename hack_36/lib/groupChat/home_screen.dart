@@ -10,7 +10,7 @@ class HomeScreen2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.blueGrey,
       body: StreamBuilder(
           stream: FirebaseFirestore.instance
               .collection('groups')
@@ -51,7 +51,7 @@ class HomeScreen2 extends StatelessWidget {
                               shape: BoxShape.circle,
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.grey.withOpacity(0.5),
+                                  color: Colors.grey[600].withOpacity(0.5),
                                   spreadRadius: 2,
                                   blurRadius: 5,
                                 ),
@@ -59,8 +59,11 @@ class HomeScreen2 extends StatelessWidget {
                             ),
                             child: CircleAvatar(
                               radius: 35,
-                              backgroundColor: Colors.blue,
-                              child: Text(chat.data()['group'][0]),
+                              backgroundColor: Colors.red[200],
+                              child: Text(
+                                chat.data()['group'][0],
+                                style: TextStyle(color: Colors.black),
+                              ),
                             ),
                           ),
                           Container(
@@ -79,6 +82,7 @@ class HomeScreen2 extends StatelessWidget {
                                         Text(
                                           chat.data()['group'],
                                           style: TextStyle(
+                                            color: Colors.white,
                                             fontSize: 16,
                                             fontWeight: FontWeight.bold,
                                           ),
@@ -125,6 +129,7 @@ class HomeScreen2 extends StatelessWidget {
             }
           }),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.red[300],
         onPressed: () {
           return Navigator.push(
             context,

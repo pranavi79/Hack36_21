@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hack_36/video/firestorageservice.dart';
 import 'package:hack_36/video/PreRecordVideo.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 String url1 =
     'https://firebasestorage.googleapis.com/v0/b/hack36-2021.appspot.com/o/video_1%2FExampleVideo-1.mp4?alt=media&token=4c67e32a-30c9-4972-9d3e-922a42005ff2';
@@ -29,40 +30,54 @@ class _VideoListScreenState extends State<VideoListScreen> {
   Widget build(BuildContext context) {
     //videoFromStorage(context, "video_1/hello_video.mp4");
     return Scaffold(
-      backgroundColor: Color(0xFFFFCEE6),
-      body: ListView(
-        padding: const EdgeInsets.all(5),
-        children: <Widget>[
-          RaisedButton(
-            child: Container(
-              height: 75,
-              color: Color(0xFFEF87BE),
-              child: const Center(child: Text('Example Video 1')),
-            ),
-            onPressed: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => VideoPlayerScreen(url: url1),
-                  ));
-            },
+      backgroundColor: Colors.blueGrey, //Color(0xFFFFCEE6),
+      body: Column(
+        children: [
+          Padding(
+            padding: EdgeInsets.all(10),
           ),
-          SizedBox(
-            height: 5,
+          Text(
+            "Pre-recorded videos",
+            textAlign: TextAlign.center,
+            style: GoogleFonts.roboto(
+                fontSize: 30, fontWeight: FontWeight.bold, color: Colors.white),
           ),
-          RaisedButton(
-            child: Container(
-              height: 75,
-              color: Color(0xFFEF87BE),
-              child: const Center(child: Text('Example Video 2')),
-            ),
-            onPressed: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => VideoPlayerScreen(url: url2),
-                  ));
-            },
+          ListView(
+            shrinkWrap: true,
+            padding: const EdgeInsets.all(20),
+            children: <Widget>[
+              RaisedButton(
+                child: Container(
+                  height: 75,
+                  color: Colors.red[200], //Color(0xFFEF87BE),
+                  child: const Center(child: Text('Example Video 1')),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => VideoPlayerScreen(url: url1),
+                      ));
+                },
+              ),
+              SizedBox(
+                height: 5,
+              ),
+              RaisedButton(
+                child: Container(
+                  height: 75,
+                  color: Colors.red[200], //Color(0xFFEF87BE),
+                  child: const Center(child: Text('Example Video 2')),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => VideoPlayerScreen(url: url2),
+                      ));
+                },
+              ),
+            ],
           ),
         ],
       ),

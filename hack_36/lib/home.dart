@@ -53,13 +53,13 @@ class _MyHomePageState extends State<MyHomePage> {
           height: 30,
           width: 30,
         ),
-        title: Text("Hack36",
-            style: GoogleFonts.roboto(fontWeight: FontWeight.bold)),
+        title: Text("S.H.I.E.L.D",
+            style: GoogleFonts.oswald(fontWeight: FontWeight.bold)),
         actions: <Widget>[
           IconButton(
             icon: Icon(
               Icons.exit_to_app,
-              color: Colors.black45,
+              color: Colors.blueGrey[800],
             ),
             onPressed: () {
               _fire.out();
@@ -103,22 +103,22 @@ class _MyHomePageState extends State<MyHomePage> {
           BottomNavyBarItem(
               title: Text('Profile'),
               icon: Icon(Icons.person),
-              inactiveColor: Colors.black45,
+              inactiveColor: Colors.blueGrey[800],
               activeColor: Colors.white),
           BottomNavyBarItem(
               title: Text('Videos'),
               icon: Icon(Icons.video_library),
-              inactiveColor: Colors.black45,
+              inactiveColor: Colors.blueGrey[800],
               activeColor: Colors.white),
           BottomNavyBarItem(
               title: Text('Chat'),
               icon: Icon(Icons.chat_bubble_outline),
-              inactiveColor: Colors.black45,
+              inactiveColor: Colors.blueGrey[800],
               activeColor: Colors.white),
           BottomNavyBarItem(
               title: Text('Videocall'),
               icon: Icon(Icons.video_call),
-              inactiveColor: Colors.black45,
+              inactiveColor: Colors.blueGrey[800],
               activeColor: Colors.white),
         ],
       ),
