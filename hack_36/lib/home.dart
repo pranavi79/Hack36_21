@@ -72,8 +72,10 @@ class _MyHomePageState extends State<MyHomePage> {
             setState(() => _currentIndex = index);
           },
           children: <Widget>[
+
             //
             Profile(curr: curr),
+
             Container(
               color: Colors.black54,
             ),
@@ -125,6 +127,7 @@ class _MyHomePageState extends State<MyHomePage> {
           BottomNavyBarItem(
               title: Text('Chat'),
               icon: Icon(Icons.chat_bubble_outline),
+
               inactiveColor: Colors.black45,
               activeColor: Colors.white),
           BottomNavyBarItem(
