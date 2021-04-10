@@ -265,13 +265,13 @@ class LoginScreenState extends State<LoginScreen> {
         s = "Fill in the required fields.";
       }
       Fluttertoast.showToast(
-          msg: s,
-          toastLength: Toast.LENGTH_LONG,
-          gravity: ToastGravity.BOTTOM,
-          timeInSecForIosWeb: 2,
-          backgroundColor: Colors.red,
-          textColor: Colors.white,
-          fontSize: 12.0);
+      msg: s,
+    toastLength: Toast.LENGTH_LONG,
+    gravity: ToastGravity.BOTTOM,
+    timeInSecForIosWeb: 2,
+    backgroundColor: Colors.red,
+    textColor: Colors.white,
+    fontSize: 12.0);
     }
   }
 }
