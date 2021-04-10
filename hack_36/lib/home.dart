@@ -6,6 +6,8 @@ import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:hack_36/groupChat/home_screen.dart';
 import 'fireauth.dart';
 import 'package:hack_36/Profile.dart';
+import 'package:hack_36/video/PreRecordVideo.dart';
+import 'package:hack_36/video/videoList.dart';
 
 class MyHomePage extends StatefulWidget {
   final User curr;
@@ -75,10 +77,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
             //
             Profile(curr: curr),
+            //VideoPlayerScreen(),
+            VideoListScreen(),
 
-            Container(
-              color: Colors.black54,
-            ),
+            // Container(
+            //   color: Colors.black54,
+            // ),
             // Container(
             //   color: Colors.yellow[50],
             // ),
