@@ -1,7 +1,10 @@
+import 'dart:core';
+
 import 'package:flutter/material.dart';
 import 'package:hypertrack_plugin/hypertrack.dart';
 import 'networking.dart';
 import 'package:share/share.dart';
+
 
 const String publishableKey =
     'v-mQjbXVtuGRTIF3DNDlhnKvwlIYtLuTw8a5yiZes0KLTwku2A8lazF8as8IdaXz_luRT1TtP-9-EKn8xAknsA';
@@ -32,11 +35,9 @@ class _HyperTrackQuickStartState extends State<HyperTrackQuickStart> {
     sdk = await HyperTrack.initialize(publishableKey);
     deviceId = await sdk.getDeviceId();
     sdk.setDeviceName('USER NAME');
-    helper = NetworkHelper(
-      url: 'https://v3.api.hypertrack.com',
-      auth:
-      'YOUR AUTH',
-      id: deviceId,
+    helper = NetworkHelper('https://v3.api.hypertrack.com',
+      'Basic bFZnUjFtOHdPanVXNkZqWE5oYTkxSWcyRUFjO2NlWVVsUTdLamU1eGE3M3ZMcmNBVlVEeVVTQlVzRkplQlU5ZjdQZ3hfZWFCUmNKNFRvRzBPZw==',
+       deviceId,
     );
     print(deviceId);
   }

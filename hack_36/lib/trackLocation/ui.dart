@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hypertrack_plugin/hypertrack.dart';
 
 //TODO Add your publishablekey here
-const String publishableKey ='xyz';
+const String publishableKey ='v-mQjbXVtuGRTIF3DNDlhnKvwlIYtLuTw8a5yiZes0KLTwku2A8lazF8as8IdaXz_luRT1TtP-9-EKn8xAknsA';
 void main() => runApp(HyperTrackQuickStart());
 
 class HyperTrackQuickStart extends StatefulWidget {
@@ -33,6 +33,7 @@ class _HyperTrackQuickStartState extends State<HyperTrackQuickStart> {
   }
 
   void shareLink()  {
+
   }
 
   void startTracking()  {
