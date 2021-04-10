@@ -24,7 +24,7 @@ class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
     fireauth _fire = fireauth();
-    Future.delayed(const Duration(seconds: 3), () {
+    Future.delayed(const Duration(seconds: 4), () {
       _fire.Current().then((current) {
         setState(() {
           status =
@@ -41,7 +41,7 @@ class _SplashPageState extends State<SplashPage> {
 
   void initController() {
     controllerTopCenter =
-        ConfettiController(duration: const Duration(seconds: 3));
+        ConfettiController(duration: const Duration(seconds: 4));
   }
 
   @override
@@ -57,7 +57,7 @@ class _SplashPageState extends State<SplashPage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    buildConfettiWidget(controllerTopCenter, pi / 1),
+                    //buildConfettiWidget(controllerTopCenter, pi / 1),
                     buildConfettiWidget(controllerTopCenter, pi / 4),
                     Padding(
                       padding: const EdgeInsets.all(10.0),
