@@ -1,8 +1,9 @@
 # S.H.I.E.L.D
 ## Hack36_21 4.0
 SHIELD is a Flutter app to help people, especially women, feel less uneasy and ensure their safety in any situation where they may feel threatened.
-Our app provides features such as live location sharing, pre-recorded one-sided video calls, chats with our closest ones and emergency contacts, and video-conferencing channels with people from around the world. </br>
-The video features serve the purpose of not only bringing the user comfort but also letting others around you know that you are not alone and there are people who are aware of your whereabouts/location.
+Our app provides features such as live location sharing, pre-recorded one-sided video calls, chats with our closest ones and emergency contacts, and video-conferencing channels with people from around the world. </br></br>
+The video features serve the purpose of not only bringing the user comfort but also letting others around you know that you are not alone and there are people who are aware of your whereabouts/location.</br></br>
+To prevent misuse of data and to ensure privacy, we have restricted screen capture and screen recording.
 # Demo Video Link </br>
 https://youtu.be/R68gmrNP_lw
 
