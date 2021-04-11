@@ -12,24 +12,21 @@ class HyperTrackQuickStart extends StatefulWidget {
   @override
   _HyperTrackQuickStartState createState() => _HyperTrackQuickStartState();
 }
+
 final _firestoreid = FirebaseFirestore.instance;
 String data;
 
 class _HyperTrackQuickStartState extends State<HyperTrackQuickStart> {
-
   static const key =
       'v-mQjbXVtuGRTIF3DNDlhnKvwlIYtLuTw8a5yiZes0KLTwku2A8lazF8as8IdaXz_luRT1TtP-9-EKn8xAknsA'; //Provide the publishable key from the dashboard
-  String deviceName =
-      'OnePlus'; //Provide a name for your device
+  String deviceName = 'OnePlus'; //Provide a name for your device
   String _result = 'Not initialized';
   String _deviceId = '';
   HyperTrack sdk;
   String buttonLabel = 'Start Tracking';
-  Color buttonColor = Colors.green;
+  Color buttonColor = Colors.red[200];
   final _auth = FirebaseAuth.instance;
   User LInUser;
-
-
 
   void getCurrentUser() async {
     try {
@@ -42,13 +39,11 @@ class _HyperTrackQuickStartState extends State<HyperTrackQuickStart> {
     }
   }
 
-
   void initState() {
     super.initState();
     initializeSdk();
     getCurrentUser();
   }
-
 
   // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> initializeSdk() async {
@@ -75,7 +70,6 @@ class _HyperTrackQuickStartState extends State<HyperTrackQuickStart> {
 
     final deviceId = (sdk == null) ? "unknown" : await sdk.getDeviceId();
 
-
     // If the widget was removed from the tree while the asynchronous platform
     // message was in flight, we want to discard the reply rather than calling
     // setState to update our non-existent appearance.
@@ -88,12 +82,14 @@ class _HyperTrackQuickStartState extends State<HyperTrackQuickStart> {
   }
 
   Future getData() async {
-    http.Response response =
-    await http.get('https://v3.api.hypertrack.com/devices/{$_deviceId}', headers: {'Authorization': 'Basic bFZnUjFtOHdPanVXNkZqWE5oYTkxS'
-        'WcyRUFjOmNlWVVsUTdLamU1eGE3M3ZMcmNBVlVEeVVTQlVzRkplQlU5ZjdQZ3hfZWFCUmNKNFRvRzBPZw=='});
+    http.Response response = await http
+        .get('https://v3.api.hypertrack.com/devices/{$_deviceId}', headers: {
+      'Authorization': 'Basic bFZnUjFtOHdPanVXNkZqWE5oYTkxS'
+          'WcyRUFjOmNlWVVsUTdLamU1eGE3M3ZMcmNBVlVEeVVTQlVzRkplQlU5ZjdQZ3hfZWFCUmNKNFRvRzBPZw=='
+    });
     if (response.statusCode == 200) {
-       data = response.body;
-       return jsonDecode(data);
+      data = response.body;
+      return jsonDecode(data);
     } else {
       print(response.statusCode);
     }
@@ -106,18 +102,17 @@ class _HyperTrackQuickStartState extends State<HyperTrackQuickStart> {
         toastLength: Toast.LENGTH_LONG,
         gravity: ToastGravity.BOTTOM,
         timeInSecForIosWeb: 2,
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.red[200],
         textColor: Colors.white,
         fontSize: 12.0);
-    FlutterClipboard.copy("https://trck.at/nx8jnj6").then(( value ) => print('copied'));
+    FlutterClipboard.copy("https://trck.at/nx8jnj6")
+        .then((value) => print('copied'));
     getData();
-
   }
 
   void stop() {
     sdk.stop();
   }
-
 
   void syncDeviceSettings() => sdk.syncDeviceSettings();
 
@@ -138,9 +133,11 @@ class _HyperTrackQuickStartState extends State<HyperTrackQuickStart> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-            backgroundColor: Colors.green,
+            automaticallyImplyLeading: true,
+            backgroundColor: Colors.red[200],
             title: Text(
               'Live Location',
               style: TextStyle(),
@@ -187,7 +184,7 @@ class _HyperTrackQuickStartState extends State<HyperTrackQuickStart> {
     } else {
       setState(() {
         this.buttonLabel = "Start Tracking";
-        this.buttonColor = Colors.green;
+        this.buttonColor = Colors.pink;
       });
     }
   }
