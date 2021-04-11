@@ -1,3 +1,6 @@
+import 'package:flutter/gestures.dart';
+import 'package:url_launcher/url_launcher.dart';
+
 import '../trackLocation/ui.dart';
 import 'view.dart';
 import 'package:flutter/material.dart';
@@ -189,6 +192,12 @@ class MessageBubble extends StatelessWidget {
   final String text;
   final bool isMe;
 
+  _launchURL(String link) async {
+    if (await canLaunch(link)) {
+      await launch(link);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -219,13 +228,18 @@ class MessageBubble extends StatelessWidget {
             color: isMe ? Colors.red[200] : Colors.white,
             child: Padding(
               padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-              child: Text(
-                text,
+              child: RichText(
+                  text: TextSpan(
+                text: text,
                 style: TextStyle(
                   color: isMe ? Colors.white : Colors.black54,
                   fontSize: 15.0,
                 ),
-              ),
+                recognizer: TapGestureRecognizer()
+                  ..onTap = () {
+                    _launchURL(text);
+                  },
+              )),
             ),
           ),
         ],
