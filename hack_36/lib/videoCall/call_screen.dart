@@ -4,8 +4,8 @@ import 'package:agora_rtc_engine/rtc_engine.dart';
 import 'package:agora_rtc_engine/rtc_local_view.dart' as RtcLocalView;
 import 'package:agora_rtc_engine/rtc_remote_view.dart' as RtcRemoteView;
 
-const token =
-    '006c367924b1fe74fdb9c3209dc74aac814IABYi+AZXBh5DDt6YQRuvjUzTXY+ZNwRjFWdbrb5WT/AigrCxmsAAAAAEAAVx5nnpj5zYAEAAQCmPnNg';
+//const token1 =
+//    '006c367924b1fe74fdb9c3209dc74aac814IABYi+AZXBh5DDt6YQRuvjUzTXY+ZNwRjFWdbrb5WT/AigrCxmsAAAAAEAAVx5nnpj5zYAEAAQCmPnNg';
 
 class CallPage extends StatefulWidget {
   final String channelName;
@@ -20,7 +20,7 @@ class _CallPageState extends State<CallPage> {
   final _infoStrings = <String>[];
   bool muted = false;
   RtcEngine _engine;
-  //String token;
+  String token;
 
   Future<void> _initAgoraRtcEngine() async {
     _engine = await RtcEngine.create(appID);
@@ -80,23 +80,16 @@ class _CallPageState extends State<CallPage> {
       });
       return;
     }
+     token = getToken(widget.channelName);
 
-    // token = getToken(widget.channelName);
-    // print(token);
-    // if (token == "") {
-    //   setState(() {
-    //     _infoStrings.add(
-    //       'Token is Invalid',
-    //     );
-    //     _infoStrings.add('Cannot connect to channel');
-    //   });
-    //   return;
-    // }
+    print(token);
+    print("TOKENNNNN ");
 
     await _initAgoraRtcEngine();
     _addAgoraEventHandlers();
     await _engine.joinChannel(token, widget.channelName, null, 0);
   }
+
 
   @override
   void dispose() {
@@ -261,3 +254,4 @@ class _CallPageState extends State<CallPage> {
     _engine.switchCamera();
   }
 }
+
