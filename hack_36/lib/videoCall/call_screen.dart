@@ -4,8 +4,8 @@ import 'package:agora_rtc_engine/rtc_engine.dart';
 import 'package:agora_rtc_engine/rtc_local_view.dart' as RtcLocalView;
 import 'package:agora_rtc_engine/rtc_remote_view.dart' as RtcRemoteView;
 
-const token =
-    '006c367924b1fe74fdb9c3209dc74aac814IABYi+AZXBh5DDt6YQRuvjUzTXY+ZNwRjFWdbrb5WT/AigrCxmsAAAAAEAAVx5nnpj5zYAEAAQCmPnNg';
+// const token =
+//     '006524a6bc2ad324e88a9f130bb6ef2f71eIABXhvkt+8ICakB0Stg1UG+l37p5QYH1cWcEJYm1oFAjxpzywRwAAAAAEAC74Hh6j5RzYAEAAQCPlHNg';
 
 class CallPage extends StatefulWidget {
   final String channelName;
