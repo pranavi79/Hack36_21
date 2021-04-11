@@ -7,6 +7,7 @@ import 'package:http/http.dart' as http;
 import 'package:clipboard/clipboard.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
+
 class HyperTrackQuickStart extends StatefulWidget {
   @override
   _HyperTrackQuickStartState createState() => _HyperTrackQuickStartState();
