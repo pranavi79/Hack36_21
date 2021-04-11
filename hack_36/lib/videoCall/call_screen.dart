@@ -3,7 +3,7 @@ import 'utils.dart';
 import 'package:agora_rtc_engine/rtc_engine.dart';
 import 'package:agora_rtc_engine/rtc_local_view.dart' as RtcLocalView;
 import 'package:agora_rtc_engine/rtc_remote_view.dart' as RtcRemoteView;
-
+import 'package:flutter_windowmanager/flutter_windowmanager.dart';
 
 class CallPage extends StatefulWidget {
   final String channelName;
@@ -78,7 +78,7 @@ class _CallPageState extends State<CallPage> {
       });
       return;
     }
-     token = getToken(widget.channelName);
+    token = getToken(widget.channelName);
 
     print(token);
     print("TOKENNNNN ");
@@ -87,7 +87,6 @@ class _CallPageState extends State<CallPage> {
     _addAgoraEventHandlers();
     await _engine.joinChannel(token, widget.channelName, null, 0);
   }
-
 
   @override
   void dispose() {
@@ -104,6 +103,7 @@ class _CallPageState extends State<CallPage> {
     super.initState();
     // initialize agora sdk
     initialize();
+    disableCapture();
   }
 
   @override
@@ -251,5 +251,8 @@ class _CallPageState extends State<CallPage> {
   void _onSwitchCamera() {
     _engine.switchCamera();
   }
-}
 
+  Future<void> disableCapture() async {
+    await FlutterWindowManager.addFlags(FlutterWindowManager.FLAG_SECURE);
+  }
+}

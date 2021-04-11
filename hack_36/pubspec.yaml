@@ -45,7 +45,7 @@ dependencies:
   permission_handler: ^5.1.0+2
 
   url_launcher: ^5.7.10
-
+  flutter_windowmanager: ^0.0.2
 
 
   flutter:
